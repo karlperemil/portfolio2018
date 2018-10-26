@@ -1,5 +1,5 @@
 <?php
-/* Template Name: Start Page */
+/* Template Name: Work */
 get_header();
 if ( have_posts() ) :
 
