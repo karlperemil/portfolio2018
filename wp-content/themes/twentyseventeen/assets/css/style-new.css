@@ -52,7 +52,14 @@ body,html {
 }
 
 .white-body {
-    font-display: 'Helvetica Neue', sans-serif;
+    font-family: 'Helvetica Neue', sans-serif;
     font-size: 1em;
     line-height: 1.5em;
+}
+
+.black-body {
+    font-family: 'Helvetica Neue', sans-serif;
+    font-size: 1em;
+    line-height: 1.5em;
+    color: black;
 }
