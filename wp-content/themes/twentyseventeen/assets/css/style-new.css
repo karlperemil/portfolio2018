@@ -1,3 +1,9 @@
+.work-styles {
+    padding-top: 30%;
+    padding-left: 1.5em;
+    padding-right: 1.5em;
+}
+
 #menu {
     position: absolute;
     right: 0;
@@ -11,7 +17,7 @@
     color: white;
 }
 
-.styles-test {
+.work-styles {
     background:grey;
     min-height:100vh;
 }
@@ -51,15 +57,48 @@ body,html {
     color: white;
 }
 
-.white-body {
-    font-family: 'Helvetica Neue', sans-serif;
-    font-size: 1em;
+h1 {
+    font-size: 2.33em;
     line-height: 1.5em;
+    font-weight: 400;
 }
 
-.black-body {
+h2 {
+    font-size: 1.5em;
+    line-height: 2em;
+    font-weight: 400;
+    padding: 0;
+    margin: 0;
+}
+
+h3 {
+    font-size: 0.75em;
+    line-height: 1.25em;
+    font-weight: 400;
+    color: white;
+    padding: 0;
+    margin: 0;
+    opacity: 1;
+}
+
+p {
     font-family: 'Helvetica Neue', sans-serif;
     font-size: 1em;
+    font-style: none;
     line-height: 1.5em;
-    color: black;
+    font-weight: 400;
+    margin: 0;
+}
+
+.italic {
+    font-style: italic;
+    opacity: 0.75;
+}
+
+.black {
+    color: black !important;
+}
+
+.white {
+    color: white !important;
 }
