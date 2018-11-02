@@ -29,7 +29,7 @@
 body,html {
     background: black;
     color: white;
-    font-size: 2.3vw;
+    font-size: 2.2vw;
 }
 
 .glslCanvas {
@@ -56,7 +56,29 @@ body,html {
 /* Desktop */
 
 h1 {
-    font-size: 3.66vw;
+    font-size: 4.39vw;
+    line-height: 1.5em;
+    font-weight: 400;
+}
+
+h2 {
+    font-size: 2.93vw;
+    line-height: 1.5em;
+    font-weight: 400;
+}
+
+h3 {
+    font-size: 1.46vw;
+    line-height: 1.5em;
+    font-weight: 400;
+    color: white;
+    padding: 0;
+    margin: 0;
+    opacity: 1;
+}
+
+p {
+    font-size: 2.2vw;
     line-height: 1.5em;
     font-weight: 400;
 }
