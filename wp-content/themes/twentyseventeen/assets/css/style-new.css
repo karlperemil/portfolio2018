@@ -29,7 +29,7 @@
 body,html {
     background: black;
     color: white;
-    font-size: 15px;
+    font-size: 2.3vw;
 }
 
 .glslCanvas {
@@ -48,47 +48,71 @@ body,html {
     z-index: 100;
 }
 
-.main-title {
-    text-align: center;
-}
-
 .main-title h2 {
     padding-top: 0;
     color: white;
 }
 
+/* Desktop */
+
 h1 {
-    font-size: 2.33em;
+    font-size: 3.66vw;
     line-height: 1.5em;
     font-weight: 400;
 }
 
-h2 {
-    font-size: 1.5em;
-    line-height: 2em;
-    font-weight: 400;
-    padding: 0;
-    margin: 0;
+/* Mobile */
+
+@media screen and (max-width: 425px) {
+.main-title {
+    text-align: center;
 }
 
-h3 {
-    font-size: 0.75em;
-    line-height: 1.25em;
-    font-weight: 400;
-    color: white;
-    padding: 0;
-    margin: 0;
-    opacity: 1;
+    body,html {
+        font-size: 15px;
+    }
+
+    .main-title h2 {
+        padding-top: 0;
+        color: white;
+    }
+
+    h1 {
+        font-size: 2.33em;
+        line-height: 1.5em;
+        font-weight: 400;
+    }
+
+    h2 {
+        font-size: 1.5em;
+        line-height: 2em;
+        font-weight: 400;
+        padding: 0;
+        margin: 0;
+    }
+
+    h3 {
+        font-size: 0.75em;
+        line-height: 1.25em;
+        font-weight: 400;
+        color: white;
+        padding: 0;
+        margin: 0;
+        opacity: 1;
+    }
+
+    p {
+        font-family: 'Helvetica Neue', sans-serif;
+        font-size: 1em;
+        font-style: none;
+        line-height: 1.5em;
+        font-weight: 400;
+        margin: 0;
+    }
+
 }
 
-p {
-    font-family: 'Helvetica Neue', sans-serif;
-    font-size: 1em;
-    font-style: none;
-    line-height: 1.5em;
-    font-weight: 400;
-    margin: 0;
-}
+/* Typographic styles */
 
 .italic {
     font-style: italic;
