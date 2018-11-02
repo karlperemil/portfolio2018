@@ -1,0 +1,16 @@
+.title-bar {
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: 1em;
+    background: transparent;
+    z-index: 100;
+}
+
+.template-work .title-bar {
+    background:white;
+}
+
+.template-about .title-bar {
+    background:black;
+}

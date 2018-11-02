@@ -29,6 +29,10 @@
 	<p><a href="/personal-projects">Projects</a></p>
 	<p><a href="/about">About</a></p>
 </div>
+<div id="title-bar" class="title-bar">
+	<h1>Emil Jönsson</h1>
+	<h2>Web & game developer</h2>
+</div>
 <div id="page" class="site">
 	<?php
 	/*

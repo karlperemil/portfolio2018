@@ -43,6 +43,13 @@ body,html {
 
 .main-title {
     text-align: center;
+    padding: 1em;
+}
+
+.main-title h1 {
+    font-size: 39px;
+    text-align: left;
+    line-height: 44px;
 }
 
 .main-title h2 {

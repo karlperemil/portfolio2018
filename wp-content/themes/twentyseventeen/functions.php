@@ -415,6 +415,7 @@ function twentyseventeen_scripts() {
 	// Theme stylesheet.
 	wp_enqueue_style( 'twentyseventeen-style', get_stylesheet_uri() );
 	wp_enqueue_style( 'style-new', get_theme_file_uri( '/assets/css/style-new.css' ), array( 'twentyseventeen-style' ), '1.0' );
+	wp_enqueue_style( 'style-layout', get_theme_file_uri( '/assets/css/style-layout.css' ), array( 'twentyseventeen-style' ), '1.0' );
 
 	// Load the dark colorscheme.
 	if ( 'dark' === get_theme_mod( 'colorscheme', 'light' ) || is_customize_preview() ) {
@@ -447,6 +448,8 @@ function twentyseventeen_scripts() {
 		$twentyseventeen_l10n['collapse']       = __( 'Collapse child menu', 'twentyseventeen' );
 		$twentyseventeen_l10n['icon']           = twentyseventeen_get_svg( array( 'icon' => 'angle-down', 'fallback' => true ) );
 	}
+
+	wp_enqueue_script( 'index.js', get_theme_file_uri( '/assets/js/index.js' ), array( 'jquery' ), '1.0', true );
 
 	wp_enqueue_script( 'twentyseventeen-global', get_theme_file_uri( '/assets/js/global.js' ), array( 'jquery' ), '1.0', true );
 
