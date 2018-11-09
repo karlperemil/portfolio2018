@@ -26,9 +26,9 @@
 
 <body <?php body_class(); ?>>
 <div id="menu">
-	<p><a href="/work">Work</a></p>
-	<p><a href="/personal-projects">Projects</a></p>
-	<p><a href="/about">About</a></p>
+	<!--<p><a href="/personal-projects">Projects</a></p>-->
+	<p><a href="/about">+ About</a></p>
+	<p><a href="/work">+ Work</a></p>
 </div>
 <div id="title-bar" class="title-bar">
 	<h1>Emil Jönsson</h1>
