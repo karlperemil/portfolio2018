@@ -34,6 +34,10 @@
 	<h1>Emil Jönsson</h1>
 	<h2>Web & game developer</h2>
 </div>
+<div id="frontpage-footer">
+	<p><a href="mailto:hello@emilj.se">hello@emilj.se<a></p>
+	<p><a href="https://github.com/karlperemil">Github</a>, <a href="https://www.linkedin.com/in/emil-j%C3%B6nsson-22292034/">Linkedin</a></p>
+</div>
 <div id="page" class="site">
 	<?php
 	/*

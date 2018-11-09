@@ -2,9 +2,10 @@
     position: absolute;
     top: 0;
     left: 0;
-    padding: 1em;
+    padding: 1.5em;
     background: transparent;
     z-index: 100;
+    cursor: pointer;
 }
 
 .template-work .title-bar {
@@ -13,4 +14,24 @@
 
 .template-about .title-bar {
     background:black;
+}
+
+.page-template-template-work a {
+    color: white;
+}
+
+.page-template-template-work a:hover {
+    text-decoration: underline;
+}
+
+.menu-padder {
+    margin-top: 7em;
+    padding: 1.5em;
+}
+
+#frontpage-footer {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    padding: 1.5em;
 }
