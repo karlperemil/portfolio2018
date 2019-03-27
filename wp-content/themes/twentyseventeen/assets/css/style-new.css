@@ -1,4 +1,14 @@
+body a:hover, html a:hover {
+    text-decoration: underline;
+}
 
+a {
+    color: white;
+}
+
+a:hover {
+    color: white;
+}
 
 .work-styles {
     padding-top: 30%;
@@ -7,21 +17,71 @@
 }
 
 #menu {
-    position: absolute;
-    right: 0;
+    /* position: fixed; */
+    left: 0;
     top: 0;
-    padding: 1em;
+    /* background: linear-gradient(to bottom, rgba(0,0,0,1) 0%,rgba(0,0,0,1) 60%,rgba(0,0,0,0) 100%); */
     z-index:100;
+    width: 100%;
+    padding: 3rem 3rem 6rem;
+}
+
+.page-template-page-startpage #menu {
+    background: none;
 }
 
 #menu a {
     display: block;
     color: white;
+    text-decoration: none;
+    
+}
+
+#menu a:hover .menu-plus {
+    padding-right: 15px;
+    text-decoration: none;
+    margin-left: -5px;
+}
+
+#menu a:hover .menu-minus {
+    padding-right: 15px;
+    text-decoration: none;
+    margin-left: -5px;
+}
+
+#menu a:hover .menu-text {
+    text-decoration: none;
+}
+
+#menu-select {
+    display: inline-block;
+    width: 49%;
+    text-align: right;
+}
+
+.menu-plus {
+    display: inline-block;
+    padding-right: 10px;
+    transition: all .25s ease-in-out;
+}
+
+.menu-minus {
+    display: none;
+    padding-right: 10px;
+    transition: all .25s ease-in-out;
+}
+
+.title-bar {
+    display: inline-block;
+    vertical-align: top;
+    width: 50%;
+    cursor: pointer;
 }
 
 .title-bar h1 {
-    font-size: 1em;
+    font-size: 25px;
     margin-bottom: 0;
+    cursor: pointer;
 }
 
 .title-bar h2 {
@@ -36,16 +96,21 @@
 
 #menu p {
     margin-bottom: .4em;
+    display: inline-block;
+    vertical-align: top;
+    margin-left: 1em;
+    font-size: 25px;
 }
 
 body,html {
     background: black;
     color: white;
     font-size: 15px;
-    font-family: neue-haas-grotesk-text,sans-serif;
-    font-weight: 400;
+    font-family: 'Roboto Mono', monospace, sans-serif;
     font-style: normal;
-    font-size: 2.2vw;
+    font-size: 15px;
+    font-weight: 400;
+    -webkit-font-smoothing: antialiased;
 }
 
 .glslCanvas {
@@ -59,20 +124,26 @@ body,html {
 
 .main-title-wrap {
     position: relative;
-    transform: perspective(1px) translateY(-50%);
-    top: 50vh;
+    transform: translateY(22%);
+    top: -50%;
     z-index: 100;
 }
 
 .main-title {
     text-align: center;
-    padding: 1em;
+    padding: 0 3rem;
 }
 
 .main-title h1 {
-    font-size: 39px;
+    font-size: 2.5vw;
     text-align: left;
-    line-height: 44px;
+    line-height: 1.3em;
+    width: 60%;
+    max-width: 100%;
+}
+
+.main-title h1 b {
+    font-style: italic;
 }
 
 .main-title h2 {
@@ -80,22 +151,212 @@ body,html {
     color: white;
 }
 
+/* Work */
+
+.page-template-template-work .menu-plus-work {
+    display: none;
+}
+
+.page-template-template-work .menu-minus-work {
+    display: initial;
+}
+
+.page-template-template-work .menu-padder {
+    /* margin-top: 4em; */
+}
+
+.post-tags {
+    color: #999999;
+    font-size: 1.5rem;
+    margin-left: 0;
+    display: block;
+    width: 100%;
+}
+
+button {
+    background: black;
+    border: 1px solid white;
+    font-family: 'Roboto Mono', monospace, sans-serif;
+    font-size: 1.5rem;
+    padding: 0.4em 1em;
+    transition: all .3s ease-in-out;
+    border-radius: 0;
+    cursor: pointer;
+    -webkit-font-smoothing: antialiased;
+    font-weight: 400;
+    /* float: right; */
+}
+
+button:hover {
+    background: white;
+    color: black;
+}
+
+article h2 {
+    font-size: 2rem;
+    color: white;
+    margin-bottom: .3em;
+}
+
+article h2:before {
+    display: none;
+    content: '';
+    width: .7em;
+    height: .7em;
+    background-image: url('/wp-content/themes/twentyseventeen/assets/images/work-enter.svg');
+    background-repeat: no-repeat;
+    margin: .3em .3em 0 0;
+}
+
+article {
+    margin-bottom: 6rem;
+    cursor: pointer;
+    /* min-height: 80vh; */
+    /* display: flex; */
+}
+
+.work-image {
+    background-repeat: no-repeat;
+    background-size: cover;
+    transition: .3s ease-in-out;
+    background-position: center center;
+    padding-bottom: 82vh;
+    width: 100%;
+    cursor: pointer;
+    flex: 100%;
+}
+.work-image:hover {
+    background-size: cover;
+}
+
+
+/* About */
+
+.page-template-template-about .menu-plus-about {
+    display: none;
+}
+
+.page-template-template-about .menu-minus-about {
+    display: initial;
+}
+
+.about-tagline p {
+    font-size: 35px;
+}
+
+
+section {
+    margin-top: 6em;
+    display: inline-block;
+    width: 100%;
+    vertical-align: top;
+}
+
+section.collab {
+    margin-top: 6rem;
+    margin-bottom: 3rem;
+}
+
+.services {
+    /* min-height: 96vh; */
+    position: relative;
+    margin-top: 0;
+}
+
+section.services p {
+    font-size: 30px;
+}
+
+.vertical {
+    position: relative;
+    top: -50%;
+    transform: translateY(50%);
+}
+
+section p {
+    font-size: 25px;
+}
+
+.section-title {
+    margin-bottom: 1em;
+    font-size: 25px;
+}
+
+.clients {
+    width: 49%;
+}
+
+.experience {
+    width: 49%;
+}
+
+.experience-col {
+    width: 50%;
+    float: left;
+}
+
+.collab a {
+    color: white;
+}
+.collab h1 {
+    margin-bottom: 0.6em;
+}
+
+.collab-mailto {
+    margin-bottom: 2em;
+    font-size: 35px;
+    /* text-decoration: underline; */
+    border-bottom: 2px solid white;
+    width: fit-content;
+}
+
+.page-template-template-work .collab-mailto a { transition: color .3s ease-in-out; }
+.page-template-template-work .collab-mailto a:hover {
+    text-decoration: none;
+    color:rgba(255,255,255,0.7);
+}
+
+p.thirds {
+    display: inline-block;
+    margin-right: 3em;
+}
+
+.experience-place {
+    font-size: 25px;
+    width: 65%;
+    display: inline-block;
+}
+
+.experience-year {
+    font-size: 17px;
+    width: 32%;
+    display: inline-block;
+    text-align: right;
+}
+
+.experience-title {
+    font-size: 17px;
+    margin-bottom: 1em;
+    color: #999999;
+}
+
+
 /* Desktop */
 
 h1 {
-    font-size: 4.39vw;
+    font-size: 45px;
     line-height: 1.5em;
     font-weight: 400;
 }
 
 h2 {
-    font-size: 2.93vw;
+    font-size: 30px;
     line-height: 1.5em;
     font-weight: 400;
 }
 
 h3 {
-    font-size: 1.46vw;
+    font-size: 15px;
     line-height: 1.5em;
     font-weight: 400;
     color: white;
@@ -105,11 +366,20 @@ h3 {
 }
 
 p {
-    font-size: 2.2vw;
-    line-height: 1.5em;
+    font-size: 15px;
+    line-height: 1.4em;
     font-weight: 400;
     margin: 0;
+    /* width: 50%; */
 }
+
+.grey {
+    color: rgba(153,153,153,1);
+}
+
+@media screen and (max-width: )
+
+
 
 /* Mobile */
 
@@ -158,6 +428,10 @@ p {
         line-height: 1.5em;
         font-weight: 400;
         margin: 0;
+    }
+
+    .main-title h1 {
+        width: 100%;
     }
 
 }

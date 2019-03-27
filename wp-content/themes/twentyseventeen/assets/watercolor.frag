@@ -32,7 +32,7 @@ float fbm( vec2 p )
 float pattern (in vec2 p, out vec2 q, out vec2 r, float t){
    
     
-	q.x = fbm( p + vec2(0.0,0.0) + .3*t );
+	q.x = fbm( p + vec2(0.0,0.0) + .2*t );
     q.y = fbm( p + vec2(2.2,1.3) + 1.*t );
 
     r.x = fbm( p + 10.0*q + vec2(1.7,9.2) + sin(t) );
@@ -52,8 +52,8 @@ vec4 mainImage(){
     //uv.x *= iResolution.x/iResolution.y;
 	
     vec2 q,r;
-    vec3 col1 = vec3( 2.0,0.,0.);
-    vec3 col2 = vec3( 0.,0.3,2.);
+    vec3 col1 = vec3( 1.4,1.4,1.4 + (sin(u_time)*.2));
+    vec3 col2 = vec3( 0.4,0.3,2. + (sin(u_time*5.)*.5));
     vec3 c;
     
     float f = pattern(uv, q, r, 0.1*u_time*(1.0 ) );

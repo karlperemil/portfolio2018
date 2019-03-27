@@ -17,7 +17,8 @@
 <head>
 <meta charset="<?php bloginfo( 'charset' ); ?>">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="https://use.typekit.net/nxu2pya.css">
+<link href="https://fonts.googleapis.com/css?family=Roboto+Mono:100,100i,300,300i,400,400i,500,500i,700,700i" rel="stylesheet">
+
 <script type="text/javascript" src="https://rawgit.com/patriciogonzalezvivo/glslCanvas/master/dist/GlslCanvas.js"></script>
 <link rel="profile" href="http://gmpg.org/xfn/11">
 
@@ -26,17 +27,13 @@
 
 <body <?php body_class(); ?>>
 <div id="menu">
-	<!--<p><a href="/personal-projects">Projects</a></p>-->
-	<p><a href="/about">+ About</a></p>
-	<p><a href="/work">+ Work</a></p>
-</div>
-<div id="title-bar" class="title-bar">
-	<h1>Emil Jönsson</h1>
-	<h2>Web & game developer</h2>
-</div>
-<div id="frontpage-footer">
-	<p><a href="mailto:hello@emilj.se">hello@emilj.se<a></p>
-	<p><a href="https://github.com/karlperemil">Github</a>, <a href="https://www.linkedin.com/in/emil-j%C3%B6nsson-22292034/">Linkedin</a></p>
+	<div id="title-bar" class="title-bar">
+		<h1>Emil Jönsson</h1>
+	</div>
+	<div id="menu-select">
+		<p><a href="/services"><span class="menu-plus-about menu-plus">+ </span><span class="menu-minus-about menu-minus">- </span><span class="menu-text">Services</span></a></p>
+		<p><a href="/work"><span class="menu-plus-work menu-plus">+ </span><span class="menu-minus-work menu-minus">- </span><span class="menu-text">Work</span></a></p>
+	</div>
 </div>
 <div id="page" class="site">
 	<?php

@@ -88,8 +88,9 @@ h3 {
 h4 {
 	color: #333;
 	font-size: 16px;
-	font-size: 1rem;
+	font-size: 5rem;
 	font-weight: 800;
+	color: red;
 }
 
 h5 {
@@ -597,4 +598,11 @@ object {
 
 .rtl .mejs-offscreen {
 	right: -10000px;
+}
+
+
+.full {
+	width: 100%;
+	background: red;
+	padding: 3rem;
 }

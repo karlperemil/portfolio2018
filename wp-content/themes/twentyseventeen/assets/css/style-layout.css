@@ -1,19 +1,59 @@
-.title-bar {
-    position: absolute;
-    top: 0;
-    left: 0;
-    padding: 1.5em;
-    background: transparent;
-    z-index: 100;
+#return-button {
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    padding: 1em;
+    background-image: url('/wp-content/themes/twentyseventeen/assets/images/return-button.svg');
+    width: 5em;
+    height: 5em;
     cursor: pointer;
+    margin: 3rem 3rem;
 }
-
 .template-work .title-bar {
     background:white;
 }
 
+.underline {
+    text-decoration: underline;
+}
+
+.underline-border {
+    border-bottom: 2px solid white;
+    transition: border-bottom .3s ease-in-out;
+}
+
+.underline-border:hover {
+    text-decoration: none;
+    padding-bottom: 5px;
+}
+
 .template-about .title-bar {
     background:black;
+}
+
+#return-button {
+    opacity: 0;
+    pointer-events: none;
+    transition: .3s ease-in-out;
+}
+
+.has-scrolled #return-button {
+    opacity: 1;
+    pointer-events: all;
+}
+
+.page-template-template-work.has-scrolled #return-button {
+    opacity: 0;
+    pointer-events: none;
+}
+
+.page-template-template-work.has-scrolled-bottom #return-button {
+    opacity: 1;
+    pointer-events: all;
+}
+
+#page {
+    margin-bottom: 2em;
 }
 
 .page-template-template-work a {
@@ -25,13 +65,52 @@
 }
 
 .menu-padder {
-    margin-top: 7em;
-    padding: 1.5em;
+    margin-top: 0em;
+    padding: 0 3rem;
 }
 
-#frontpage-footer {
+.page-template-page-startpage #page {
+    position: initial;
+}
+
+.page-template-page-startpage #frontpage-footer {
     position: absolute;
     bottom: 0;
     left: 0;
+    padding: 3rem;
+    z-index: 100;
+}
+
+#frontpage-footer {
+    position: relative;
     padding: 1.5em;
+    z-index: 100;
+}
+
+#frontpage-footer a {
+    color: white;
+    font-size: 25px;
+}
+
+.flex-cont {
+    display: flex;
+    margin-top: 1.5rem;
+}
+
+
+.work-text-left {
+    /* display: flex; */
+    flex: 70%;
+}
+
+.work-text-right {
+    display: flex;
+    flex: 30%;
+    flex-flow: row-reverse;
+    /* justify-content: flex-end; */
+    /* flex-direction: column-reverse; */
+}
+
+.work-text-right button {
+    margin-top: 2.1rem;
 }

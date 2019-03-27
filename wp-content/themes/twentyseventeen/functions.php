@@ -17,6 +17,55 @@ if ( version_compare( $GLOBALS['wp_version'], '4.7-alpha', '<' ) ) {
 	return;
 }
 
+remove_filter( 'the_content', 'wpautop' );
+
+
+function add_style_select_buttons( $buttons ) {
+    array_unshift( $buttons, 'styleselect' );
+    return $buttons;
+}
+// Register our callback to the appropriate filter
+add_filter( 'mce_buttons_2', 'add_style_select_buttons' );
+
+
+//add custom styles to the WordPress editor
+function my_custom_styles( $init_array ) {  
+ 
+    $style_formats = array(  
+        // These are the custom styles
+        array(  
+            'title' => 'Full Width 16:9',  
+            'block' => 'div',  
+            'classes' => 'full-width-16-9',
+            'wrapper' => true,
+		),
+		array(  
+            'title' => 'Full Width 4:3',  
+            'block' => 'div',  
+            'classes' => 'full-width-4-3',
+            'wrapper' => true,
+        ),  
+        array(  
+            'title' => 'Half Width 2:3',  
+            'block' => 'div',  
+            'classes' => 'half-width-2-3',
+            'wrapper' => true,
+        ),
+        array(  
+            'title' => 'Text Block',  
+            'block' => 'div',  
+            'classes' => 'text-block-body',
+            'wrapper' => true,
+        ),
+    );  
+    // Insert the array, JSON ENCODED, into 'style_formats'
+    $init_array['style_formats'] = json_encode( $style_formats );  
+    
+    return $init_array;  
+  
+} 
+// Attach callback to 'tiny_mce_before_init' 
+add_filter( 'tiny_mce_before_init', 'my_custom_styles' );
 /**
  * Sets up theme defaults and registers support for various WordPress features.
  *
@@ -414,8 +463,13 @@ function twentyseventeen_scripts() {
 
 	// Theme stylesheet.
 	wp_enqueue_style( 'twentyseventeen-style', get_stylesheet_uri() );
-	wp_enqueue_style( 'style-new', get_theme_file_uri( '/assets/css/style-new.css' ), array( 'twentyseventeen-style' ), '1.0' );
-	wp_enqueue_style( 'style-layout', get_theme_file_uri( '/assets/css/style-layout.css' ), array( 'twentyseventeen-style' ), '1.0' );
+	wp_enqueue_style( 'style-new', get_theme_file_uri( '/assets/css/style-new.css' ), array( 'twentyseventeen-style' ) );
+	wp_enqueue_style( 'style-layout', get_theme_file_uri( '/assets/css/style-layout.css' ), array( 'twentyseventeen-style' ) );
+	wp_enqueue_style( 'style-single', get_theme_file_uri( '/assets/css/single.css' ), array( 'twentyseventeen-style' ) );
+
+	wp_register_script('index-emil', get_theme_file_uri( '/assets/js/index.js' ), array('jquery','jquery-scrollto'), NULL);
+	wp_enqueue_script('index-emil');
+	//(wp_enqueue_script( 'index-emil', get_theme_file_uri( '/assets/js/index.js' ), array( 'jquery' ), '1.0', true );
 
 	// Load the dark colorscheme.
 	if ( 'dark' === get_theme_mod( 'colorscheme', 'light' ) || is_customize_preview() ) {
@@ -449,7 +503,7 @@ function twentyseventeen_scripts() {
 		$twentyseventeen_l10n['icon']           = twentyseventeen_get_svg( array( 'icon' => 'angle-down', 'fallback' => true ) );
 	}
 
-	wp_enqueue_script( 'index.js', get_theme_file_uri( '/assets/js/index.js' ), array( 'jquery' ), '1.0', true );
+	
 
 	wp_enqueue_script( 'twentyseventeen-global', get_theme_file_uri( '/assets/js/global.js' ), array( 'jquery' ), '1.0', true );
 
