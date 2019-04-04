@@ -6,6 +6,14 @@ console.log('index.js 2');
             document.location.href = "/";
         });
 
+        $('.full-width-16-9').each(function(){
+            console.log($(this).find('img').attr('src'));
+            $img = $(this).find('img');
+            var bgsrc = $img.attr('src');
+            $(this).css('background-image','url(' + bgsrc + ')');
+            $img.remove();
+        });
+
         $(window).scroll(function(e){
             if( $('body').hasClass('page-template-template-work') ){
                 console.log($('.collab').position().top - window.innerHeight,window.scrollY);

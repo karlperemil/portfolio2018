@@ -1,5 +1,6 @@
 body a:hover, html a:hover {
     text-decoration: underline;
+    color: gray;
 }
 
 a {
@@ -17,13 +18,14 @@ a:hover {
 }
 
 #menu {
-    /* position: fixed; */
+    position: initial;
     left: 0;
     top: 0;
     /* background: linear-gradient(to bottom, rgba(0,0,0,1) 0%,rgba(0,0,0,1) 60%,rgba(0,0,0,0) 100%); */
     z-index:100;
     width: 100%;
     padding: 3rem 3rem 6rem;
+    display: flex;
 }
 
 .page-template-page-startpage #menu {
@@ -54,9 +56,10 @@ a:hover {
 }
 
 #menu-select {
-    display: inline-block;
-    width: 49%;
+    /* display: flex; */
+    /* width: 49%; */
     text-align: right;
+    flex: 6 0 0;
 }
 
 .menu-plus {
@@ -72,10 +75,11 @@ a:hover {
 }
 
 .title-bar {
-    display: inline-block;
-    vertical-align: top;
-    width: 50%;
+    /* display: inline-block; */
+    /* vertical-align: top; */
+    /* width: 50%; */
     cursor: pointer;
+    flex: 4 0 0;
 }
 
 .title-bar h1 {
@@ -167,7 +171,7 @@ body,html {
 
 .post-tags {
     color: #999999;
-    font-size: 1.5rem;
+    font-size: 25px;
     margin-left: 0;
     display: block;
     width: 100%;
@@ -307,7 +311,20 @@ section p {
     font-size: 35px;
     /* text-decoration: underline; */
     border-bottom: 2px solid white;
+    width: -moz-fit-content;
     width: fit-content;
+    transition: all .3s ease-in-out;
+}
+
+.collab-mailto:hover {
+    border-bottom: 2px solid gray;
+}
+
+.collab-mailto a {
+    text-decoration: none !important;
+    /* background: white; */
+    /* color: black; */
+    transition: all .3s ease-in-out;
 }
 
 .page-template-template-work .collab-mailto a { transition: color .3s ease-in-out; }
@@ -377,7 +394,13 @@ p {
     color: rgba(153,153,153,1);
 }
 
-@media screen and (max-width: )
+.hide-desktop {
+    display: none !important;
+}
+
+@media screen and (max-width: 600px){
+
+}
 
 
 
@@ -432,6 +455,10 @@ p {
 
     .main-title h1 {
         width: 100%;
+    }
+
+    .hide-mobile {
+        display: none !important;
     }
 
 }

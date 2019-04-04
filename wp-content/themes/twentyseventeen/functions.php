@@ -56,6 +56,12 @@ function my_custom_styles( $init_array ) {
             'block' => 'div',  
             'classes' => 'text-block-body',
             'wrapper' => true,
+		),
+		array(  
+            'title' => 'mp4 video',  
+            'block' => 'div',  
+            'classes' => 'post-video',
+            'wrapper' => true,
         ),
     );  
     // Insert the array, JSON ENCODED, into 'style_formats'

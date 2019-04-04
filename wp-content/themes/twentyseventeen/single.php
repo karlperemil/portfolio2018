@@ -9,21 +9,23 @@ get_header();
 	while ( have_posts() ) : the_post();
 		?>
 		<div class="flexcont">
-			<div class="work-col1">
-				<h1><? the_title() ?></h1>
-				<p class="post-tags">
-					<?
-					$post_tags = get_the_tags(); 
-					if ( $post_tags ) {
-						foreach( $post_tags as $tag ) {
-						echo '#' . $tag->name . ' '; 
+			<div class="work-row">
+				<div class="work-col1">
+					<h1><? the_title() ?></h1>
+					<p class="post-tags">
+						<?
+						$post_tags = get_the_tags(); 
+						if ( $post_tags ) {
+							foreach( $post_tags as $tag ) {
+							echo '#' . $tag->name . ' '; 
+							}
 						}
-					}
-					?>
-				</p>
-			</div>
-			<div class="work-col2">
-				<p><? echo get_post_meta($post->ID, 'preamble', true); ?></p>
+						?>
+					</p>
+				</div>
+				<div class="work-col2">
+					<p><? echo get_post_meta($post->ID, 'preamble', true); ?></p>
+				</div>
 			</div>
 			<div class="post-body">
 				<? the_content() ?>
@@ -31,9 +33,9 @@ get_header();
 			<div class="bottom-nav">
 				<div class="prev-post">
 					<?php
-					$next_post = get_previous_post();
-					if (empty( $next_post )){
-						echo "empty";
+					$prev_post = get_previous_post(true);
+					if (empty( $prev_post )){
+						echo "<h1>empty</h1>";
 						$args = array(
 							'posts_per_page' => 1, // we need only the latest post, so get that post only
 							'category_name' => 'work', // Use the category id, can also replace with category_name which uses category slug
@@ -43,7 +45,7 @@ get_header();
 						
 						if ( $q->have_posts() ) {
 							while ( $q->have_posts() ) {
-								$next_post = $q;
+								$prev_post = $q;
 							}
 							wp_reset_postdata();
 						}
@@ -54,18 +56,18 @@ get_header();
 
 					?>
 					<div class="bottom-nav-direction">
-						<a href="<?php the_permalink()?>">Next</a>
+						<a href="<?php echo get_post_permalink($prev_post) ?>">Next</a>
 					</div>
 					<div class="bottom-nav-name">
-						<a href="<?php the_permalink()?>"><?php the_title()?></a>
+						<a href="<?php echo get_post_permalink($prev_post) ?>"><?php echo $prev_post->post_title?></a>
 					</div>
 					<div class="post-tags">
 					<?php
-						if (!empty( $next_post )):
-							$post_tags = get_the_tags($next_post ->ID); 
-							if ( $post_tags ) {
-								foreach( $post_tags as $tag ) {
-								echo '#' . $tag->name . ' '; 
+						if (!empty( $prev_post )):
+							$prev_post_tags = get_the_tags($prev_post ->ID); 
+							if ( $prev_post_tags ) {
+								foreach( $prev_post_tags as $tag ) {
+									echo '#' . $tag->name . ' '; 
 								}
 							}
 						endif; ?>

@@ -20,22 +20,38 @@
 
 // ** MySQL settings - You can get this info from your web host ** //
 /** The name of the database for WordPress */
-define('DB_NAME', 'portfolio2018');
+
+
+$dbname = 'portfolio2018';
+$dbpass = 'root';
+$dbuser = 'root';
+$dbhost = 'localhost:8889';
+
+$whitelist = array('127.0.0.1', "::1");
+if(!in_array($_SERVER['REMOTE_ADDR'], $whitelist)){
+	$dbname = 'emilj_se';
+	$dbuser = 'emilj_se';
+	$dbpass = 'Gh2BPz92';
+	$dbhost = 'emilj.se.mysql';
+}
+
+define('DB_NAME', $dbname);
 
 /** MySQL database username */
-define('DB_USER', 'root');
+define('DB_USER', $dbuser);
 
 /** MySQL database password */
-define('DB_PASSWORD', 'root');
+define('DB_PASSWORD', $dbpass);
 
 /** MySQL hostname */
-define('DB_HOST', 'localhost');
+define('DB_HOST', $dbhost);
 
 /** Database Charset to use in creating database tables. */
 define('DB_CHARSET', 'utf8mb4');
 
 /** The Database Collate type. Don't change this if in doubt. */
 define('DB_COLLATE', '');
+
 
 /**#@+
  * Authentication Unique Keys and Salts.

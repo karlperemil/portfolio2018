@@ -2460,6 +2460,7 @@ function wp_video_shortcode( $attr, $content = '' ) {
 		'poster'   => '',
 		'loop'     => '',
 		'autoplay' => '',
+		'controls' => '',
 		'preload'  => 'metadata',
 		'width'    => 640,
 		'height'   => 360,
@@ -2582,18 +2583,23 @@ function wp_video_shortcode( $attr, $content = '' ) {
 		'width'    => absint( $atts['width'] ),
 		'height'   => absint( $atts['height'] ),
 		'poster'   => esc_url( $atts['poster'] ),
+		'controls' => $atts['controls'],
 		'loop'     => wp_validate_boolean( $atts['loop'] ),
-		'autoplay' => wp_validate_boolean( $atts['autoplay'] ),
+		'autoplay' => wp_validate_boolean( $atts['autoplay'] ) == 1 ? 'autoplay' : '',
 		'preload'  => $atts['preload'],
 	);
 
+
 	// These ones should just be omitted altogether if they are blank
-	foreach ( array( 'poster', 'loop', 'autoplay', 'preload' ) as $a ) {
+	foreach ( array( 'poster', 'loop', 'autoplay', 'preload', 'controls' ) as $a ) {
 		if ( empty( $html_atts[$a] ) ) {
 			unset( $html_atts[$a] );
 		}
 	}
 
+	if($html_atts['controls'] != 'controls'){
+		unset( $html_atts['controls']);
+	}
 	$attr_strings = array();
 	foreach ( $html_atts as $k => $v ) {
 		$attr_strings[] = $k . '="' . esc_attr( $v ) . '"';
@@ -2603,7 +2609,7 @@ function wp_video_shortcode( $attr, $content = '' ) {
 	if ( 'mediaelement' === $library && 1 === $instance ) {
 		$html .= "<!--[if lt IE 9]><script>document.createElement('video');</script><![endif]-->\n";
 	}
-	$html .= sprintf( '<video %s controls="controls">', join( ' ', $attr_strings ) );
+	$html .= sprintf( '<video muted %s >', join( ' ', $attr_strings ) );
 
 	$fileurl = '';
 	$source = '<source type="%s" src="%s" />';

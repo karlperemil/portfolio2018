@@ -7,6 +7,7 @@
     width: 5em;
     height: 5em;
     cursor: pointer;
+    z-index: 100;
     margin: 3rem 3rem;
 }
 .template-work .title-bar {
