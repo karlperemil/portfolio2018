@@ -62,7 +62,13 @@ function my_custom_styles( $init_array ) {
             'block' => 'div',  
             'classes' => 'post-video',
             'wrapper' => true,
-        ),
+		),
+		array(
+			'title' => 'browser image',
+			'block' => 'div',
+			'classes' => 'full-width-16-9 browser-image',
+			'wrapper' => true,
+		)
     );  
     // Insert the array, JSON ENCODED, into 'style_formats'
     $init_array['style_formats'] = json_encode( $style_formats );  
@@ -271,6 +277,7 @@ function twentyseventeen_setup() {
 }
 add_action( 'after_setup_theme', 'twentyseventeen_setup' );
 
+
 /**
  * Set the content width in pixels, based on the theme's design and stylesheet.
  *
@@ -472,9 +479,20 @@ function twentyseventeen_scripts() {
 	wp_enqueue_style( 'style-new', get_theme_file_uri( '/assets/css/style-new.css' ), array( 'twentyseventeen-style' ) );
 	wp_enqueue_style( 'style-layout', get_theme_file_uri( '/assets/css/style-layout.css' ), array( 'twentyseventeen-style' ) );
 	wp_enqueue_style( 'style-single', get_theme_file_uri( '/assets/css/single.css' ), array( 'twentyseventeen-style' ) );
+	wp_enqueue_style( 'style-startpage', get_theme_file_uri( '/assets/css/startpage.css' ), array( 'twentyseventeen-style' ) );
+	wp_enqueue_style( 'style-services', get_theme_file_uri( '/assets/css/services.css' ), array( 'twentyseventeen-style' ) );
+
 
 	wp_register_script('index-emil', get_theme_file_uri( '/assets/js/index.js' ), array('jquery','jquery-scrollto'), NULL);
 	wp_enqueue_script('index-emil');
+	wp_register_script('three-js', get_theme_file_uri( '/assets/js/three.js' ), array('jquery','jquery-scrollto','index-emil'), NULL);
+	wp_enqueue_script('three-js');
+	wp_register_script('gltfloader', get_theme_file_uri( '/assets/js/gltfloader.js' ), array('jquery','jquery-scrollto','index-emil'), NULL);
+	wp_enqueue_script('gltfloader');
+	wp_register_script('css3drenderer', get_theme_file_uri( '/assets/js/css3drenderer.js' ), array('jquery','jquery-scrollto','gltfloader'), NULL);
+	wp_enqueue_script('css3drenderer');
+	wp_register_script('objloader', get_theme_file_uri( '/assets/js/OBJLoader.js' ), array('jquery','jquery-scrollto','gltfloader'), NULL);
+	wp_enqueue_script('objloader');
 	//(wp_enqueue_script( 'index-emil', get_theme_file_uri( '/assets/js/index.js' ), array( 'jquery' ), '1.0', true );
 
 	// Load the dark colorscheme.

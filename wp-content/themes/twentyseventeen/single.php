@@ -31,30 +31,36 @@ get_header();
 				<? the_content() ?>
 			</div>
 			<div class="bottom-nav">
-				<div class="prev-post">
-					<?php
-					$prev_post = get_previous_post(true);
-					if (empty( $prev_post )){
-						echo "<h1>empty</h1>";
-						$args = array(
-							'posts_per_page' => 1, // we need only the latest post, so get that post only
-							'category_name' => 'work', // Use the category id, can also replace with category_name which uses category slug
-							//'category_name' => 'SLUG OF FOO CATEGORY,
-						);
-						$q = new WP_Query( $args);
-						
-						if ( $q->have_posts() ) {
-							while ( $q->have_posts() ) {
-								$prev_post = $q;
-							}
-							wp_reset_postdata();
+				
+				<?php
+				$prev_post = get_previous_post(true);
+				if (empty( $prev_post )){
+					$args = array(
+						'posts_per_page' => 1, // we need only the latest post, so get that post only
+						'category_name' => 'work',
+						'orderby' => 'post_date',
+						'order' => 'DESC'
+					);
+					$the_query = new WP_Query($args);
+
+					$prev_post_id = 0;
+					if ( $the_query->have_posts() ) {
+						while ( $the_query->have_posts() ) {
+							$the_query->the_post();
+							$prev_post_id = get_the_ID();
 						}
-					}
-					else {
-						
+						wp_reset_postdata();
+					} else {
+						// no posts found
 					}
 
-					?>
+					$prev_post = get_post($prev_post_id);
+				}
+				else {
+					
+				}
+				?>
+				<div class="prev-post" data-href="<?php echo get_post_permalink($prev_post) ?>">
 					<div class="bottom-nav-direction">
 						<a href="<?php echo get_post_permalink($prev_post) ?>">Next</a>
 					</div>

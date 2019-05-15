@@ -2586,6 +2586,7 @@ function wp_video_shortcode( $attr, $content = '' ) {
 		'controls' => $atts['controls'],
 		'loop'     => wp_validate_boolean( $atts['loop'] ),
 		'autoplay' => wp_validate_boolean( $atts['autoplay'] ) == 1 ? 'autoplay' : '',
+		'playsinline' => wp_validate_boolean( $atts['loop'] ) == 1 ? 'playsinline' : '',
 		'preload'  => $atts['preload'],
 	);
 

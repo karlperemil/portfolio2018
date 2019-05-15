@@ -1,10 +1,29 @@
 body a:hover, html a:hover {
-    text-decoration: underline;
-    color: gray;
+    text-decoration: none;
+    color: white;
+    text-shadow: 0px 0px 1px #FFFFFF;
 }
 
 a {
-    color: white;
+    color: #999;
+    transition: all .2s ease-in-out;
+    outline: none;
+}
+
+
+/* Typographic styles */
+
+.italic {
+    font-style: italic;
+    opacity: 0.75;
+}
+
+.black {
+    color: black !important;
+}
+
+.white {
+    color: white !important;
 }
 
 a:hover {
@@ -24,14 +43,10 @@ a:hover {
     /* background: linear-gradient(to bottom, rgba(0,0,0,1) 0%,rgba(0,0,0,1) 60%,rgba(0,0,0,0) 100%); */
     z-index:100;
     width: 100%;
-    padding: 3rem 3rem 6rem;
+    padding: 4.5rem 7rem 9rem;
     display: flex;
+    margin-bottom: 0;
 }
-
-.page-template-page-startpage #menu {
-    background: none;
-}
-
 #menu a {
     display: block;
     color: white;
@@ -58,8 +73,14 @@ a:hover {
 #menu-select {
     /* display: flex; */
     /* width: 49%; */
+    /* background: red; */
     text-align: right;
     flex: 6 0 0;
+    /* transition: all .3s ease-in-out; */
+}
+
+.menu-text {
+    transition: all .25s ease-in-out;
 }
 
 .menu-plus {
@@ -74,6 +95,12 @@ a:hover {
     transition: all .25s ease-in-out;
 }
 
+.fade-gray .menu-plus, .fade-gray .menu-minus, .fade-gray .menu-text {
+    color: #999;
+}
+
+
+
 .title-bar {
     /* display: inline-block; */
     /* vertical-align: top; */
@@ -83,7 +110,7 @@ a:hover {
 }
 
 .title-bar h1 {
-    font-size: 25px;
+    font-size: 2.5rem;
     margin-bottom: 0;
     cursor: pointer;
 }
@@ -99,26 +126,29 @@ a:hover {
 }
 
 #menu p {
-    margin-bottom: .4em;
+    padding-bottom: .4em;
     display: inline-block;
     vertical-align: top;
-    margin-left: 1em;
-    font-size: 25px;
+    padding-left: 0;
+    font-size: 2.5rem;
+}
+
+#menu-select p:nth-child(2n){
+    padding-left: 1em;
 }
 
 body,html {
     background: black;
     color: white;
-    font-size: 15px;
     font-family: 'Roboto Mono', monospace, sans-serif;
     font-style: normal;
-    font-size: 15px;
+    font-size: 9px;
     font-weight: 400;
     -webkit-font-smoothing: antialiased;
 }
 
-.glslCanvas {
-    display: inline-block;
+.content3d {
+    display: none;
     position: absolute;
     top: 0;
     left: 0;
@@ -127,10 +157,19 @@ body,html {
 }
 
 .main-title-wrap {
-    position: relative;
-    transform: translateY(22%);
-    top: -50%;
-    z-index: 100;
+    /* position: relative; */
+    /* transform: translateY(50%); */
+    /* top: -50%; */
+    /* z-index: 100; */
+}
+
+.ej-logo {
+    width: 10rem;
+    height: 10rem;
+    background: url('/wp-content/themes/twentyseventeen/assets/images/ej-logo.svg');
+    background-size: contain;
+    background-repeat: no-repeat;
+    margin: auto;
 }
 
 .main-title {
@@ -139,15 +178,15 @@ body,html {
 }
 
 .main-title h1 {
-    font-size: 2.5vw;
-    text-align: left;
-    line-height: 1.3em;
-    width: 60%;
+    /* font-size: 2.5vw; */
+    /* text-align: left; */
+    /* line-height: 1.3em; */
+    /* width: 60%; */
     max-width: 100%;
 }
 
 .main-title h1 b {
-    font-style: italic;
+    font-style: initial;
 }
 
 .main-title h2 {
@@ -171,18 +210,19 @@ body,html {
 
 .post-tags {
     color: #999999;
-    font-size: 25px;
+    font-size: 2.5rem;
     margin-left: 0;
     display: block;
     width: 100%;
+    margin-bottom: 2.5rem;
 }
 
 button {
     background: black;
-    border: 1px solid white;
+    border: 0.05em solid white;
     font-family: 'Roboto Mono', monospace, sans-serif;
-    font-size: 1.5rem;
-    padding: 0.4em 1em;
+    font-size: 2.5rem;
+    padding: 0.6em 1.2em;
     transition: all .3s ease-in-out;
     border-radius: 0;
     cursor: pointer;
@@ -197,7 +237,7 @@ button:hover {
 }
 
 article h2 {
-    font-size: 2rem;
+    font-size: 3.5rem;
     color: white;
     margin-bottom: .3em;
 }
@@ -213,7 +253,7 @@ article h2:before {
 }
 
 article {
-    margin-bottom: 6rem;
+    margin-bottom: 9rem;
     cursor: pointer;
     /* min-height: 80vh; */
     /* display: flex; */
@@ -222,9 +262,9 @@ article {
 .work-image {
     background-repeat: no-repeat;
     background-size: cover;
-    transition: .3s ease-in-out;
+    /* transition: .3s ease-in-out; */
     background-position: center center;
-    padding-bottom: 82vh;
+    padding-bottom: 61vh;
     width: 100%;
     cursor: pointer;
     flex: 100%;
@@ -250,15 +290,15 @@ article {
 
 
 section {
-    margin-top: 6em;
+    margin-top: 9rem;
     display: inline-block;
     width: 100%;
     vertical-align: top;
 }
 
 section.collab {
-    margin-top: 6rem;
-    margin-bottom: 3rem;
+    margin-top: 12rem;
+    margin-bottom: 7rem;
 }
 
 .services {
@@ -266,9 +306,16 @@ section.collab {
     position: relative;
     margin-top: 0;
 }
+.page-template-template-services .menu-plus-about.menu-plus {
+    display: none;
+}
+
+.page-template-template-services .menu-minus-about.menu-minus {
+    display: inline;
+}
 
 section.services p {
-    font-size: 30px;
+    font-size: 4rem;
 }
 
 .vertical {
@@ -278,12 +325,12 @@ section.services p {
 }
 
 section p {
-    font-size: 25px;
+    font-size: 3rem;
 }
 
 .section-title {
     margin-bottom: 1em;
-    font-size: 25px;
+    font-size: 2rem;
 }
 
 .clients {
@@ -300,34 +347,34 @@ section p {
 }
 
 .collab a {
-    color: white;
+    /* color: white; */
 }
 .collab h1 {
     margin-bottom: 0.6em;
 }
 
 .collab-mailto {
-    margin-bottom: 2em;
-    font-size: 35px;
+    margin-bottom: 7rem;
+    font-size: 3.5rem;
     /* text-decoration: underline; */
-    border-bottom: 2px solid white;
+    /* border-bottom: 2px solid white; */
     width: -moz-fit-content;
     width: fit-content;
     transition: all .3s ease-in-out;
 }
 
 .collab-mailto:hover {
-    border-bottom: 2px solid gray;
+    /* border-bottom: 2px solid gray; */
 }
 
 .collab-mailto a {
-    text-decoration: none !important;
+    /* text-decoration: none !important; */
     /* background: white; */
     /* color: black; */
-    transition: all .3s ease-in-out;
+    /* transition: all .3s ease-in-out; */
 }
 
-.page-template-template-work .collab-mailto a { transition: color .3s ease-in-out; }
+.page-template-template-work .collab-mailto a {/* transition: color .3s ease-in-out; */}
 .page-template-template-work .collab-mailto a:hover {
     text-decoration: none;
     color:rgba(255,255,255,0.7);
@@ -335,24 +382,24 @@ section p {
 
 p.thirds {
     display: inline-block;
-    margin-right: 3em;
+    margin-right: 3rem;
 }
 
 .experience-place {
-    font-size: 25px;
+    font-size: 3rem;
     width: 65%;
     display: inline-block;
 }
 
 .experience-year {
-    font-size: 17px;
+    font-size: 2rem;
     width: 32%;
     display: inline-block;
     text-align: right;
 }
 
 .experience-title {
-    font-size: 17px;
+    font-size: 2.5rem;
     margin-bottom: 1em;
     color: #999999;
 }
@@ -390,6 +437,10 @@ p {
     /* width: 50%; */
 }
 
+.clients p {
+    line-height: 1.6em;
+}
+
 .grey {
     color: rgba(153,153,153,1);
 }
@@ -398,8 +449,24 @@ p {
     display: none !important;
 }
 
-@media screen and (max-width: 600px){
+.nowrap {
+    white-space:nowrap;
+}
 
+@media screen and (max-width: 600px){
+    #page .work-text-left {
+        flex: 100%;
+    }
+
+    #page .work-text-right {
+        flex: 100%;
+        flex-direction: column;
+        /* display: none; */
+    }
+
+    .flex-cont {
+        flex-flow: column;
+    }
 }
 
 
@@ -407,73 +474,28 @@ p {
 /* Mobile */
 
 @media screen and (max-width: 425px) {
-.main-title {
-    text-align: center;
-}
-
-    body,html {
-        font-size: 15px;
+    .main-title {
+        text-align: center;
     }
-
-    .main-title h2 {
-        padding-top: 0;
-        color: white;
-    }
-
-    h1 {
-        font-size: 2.33em;
-        line-height: 1.5em;
-        font-weight: 400;
-    }
-
-    h2 {
-        font-size: 1.5em;
-        line-height: 2em;
-        font-weight: 400;
-        padding: 0;
-        margin: 0;
-    }
-
-    h3 {
-        font-size: 0.75em;
-        line-height: 1.25em;
-        font-weight: 400;
-        color: white;
-        padding: 0;
-        margin: 0;
-        opacity: 1;
-    }
-
-    p {
-        font-family: 'Helvetica Neue', sans-serif;
-        font-size: 1em;
-        font-style: none;
-        line-height: 1.5em;
-        font-weight: 400;
-        margin: 0;
-    }
-
     .main-title h1 {
         width: 100%;
+    }
+
+    .show-mobile {
+        display: block !important;
     }
 
     .hide-mobile {
         display: none !important;
     }
-
 }
 
-/* Typographic styles */
+@media screen and (min-width: 425px){
+    .show-desktop {
+        display: initial !important;
+    }
 
-.italic {
-    font-style: italic;
-    opacity: 0.75;
-}
-
-.black {
-    color: black !important;
-}
-
-.white {
-    color: white !important;
+    .hide-desktop {
+        display: none !important; 
+    }
 }

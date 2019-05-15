@@ -3,17 +3,23 @@
     bottom: 0;
     right: 0;
     padding: 1em;
-    background-image: url('/wp-content/themes/twentyseventeen/assets/images/return-button.svg');
-    width: 5em;
-    height: 5em;
+    background-image: url('/wp-content/themes/twentyseventeen/assets/images/up-black.svg');
+    width: 7.5rem;
+    height: 7.5rem;
     cursor: pointer;
     z-index: 100;
-    margin: 3rem 3rem;
-}
-.template-work .title-bar {
-    background:white;
+    margin: 4.5rem 4.5rem;
 }
 
+#return-button:hover {
+    background-image: url('/wp-content/themes/twentyseventeen/assets/images/up-white.svg');
+}
+
+
+.page-template-template-work .menu-logo {
+    margin: 0;
+    width: 5rem;
+}
 .underline {
     text-decoration: underline;
 }
@@ -54,32 +60,47 @@
 }
 
 #page {
-    margin-bottom: 2em;
+    /* margin-bottom: 2em; */
+    min-height: 100vh;
 }
 
-.page-template-template-work a {
+.menu-logo {
+    margin: 0;
+    width: 5rem;
+    height: 5rem;
+}
+
+.page-template-template-work article a {
     color: white;
 }
 
-.page-template-template-work a:hover {
+.page-template-template-work article a:hover {
     text-decoration: underline;
+}
+
+.bottom-nav-direction a {
+    color: white;
+}
+
+.prev-post:hover a {
+    color: #999999
+}
+
+.break-mobile {
+    display: none;
+}
+
+.hideme {
+    opacity:0;
+}
+
+.hideme-half {
+    opacity: 0;
 }
 
 .menu-padder {
     margin-top: 0em;
-    padding: 0 3rem;
-}
-
-.page-template-page-startpage #page {
-    position: initial;
-}
-
-.page-template-page-startpage #frontpage-footer {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    padding: 3rem;
-    z-index: 100;
+    padding: 0 6.5rem;
 }
 
 #frontpage-footer {
@@ -89,13 +110,15 @@
 }
 
 #frontpage-footer a {
-    color: white;
-    font-size: 25px;
+    /* color: #999; */
+    font-size: 2.5rem;
+    margin-right: 2rem;
 }
 
 .flex-cont {
     display: flex;
-    margin-top: 1.5rem;
+    margin-top: 3.5rem;
+    flex-flow: row;
 }
 
 
@@ -107,9 +130,9 @@
 .work-text-right {
     display: flex;
     flex: 30%;
-    flex-flow: row-reverse;
-    /* justify-content: flex-end; */
-    /* flex-direction: column-reverse; */
+    flex-flow: row;
+    justify-content: flex-end;
+    /* flex-direction: column; */
 }
 
 .work-text-right button {

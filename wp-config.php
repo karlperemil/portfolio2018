@@ -27,7 +27,7 @@ $dbpass = 'root';
 $dbuser = 'root';
 $dbhost = 'localhost:8889';
 
-$whitelist = array('127.0.0.1', "::1");
+$whitelist = array('127.0.0.1','192.168.0.11', "::1");
 if(!in_array($_SERVER['REMOTE_ADDR'], $whitelist)){
 	$dbname = 'emilj_se';
 	$dbuser = 'emilj_se';

@@ -19,12 +19,12 @@ get_header();
         ?>
             <article data-id="<?php the_permalink() ?>">
             <?php //the_post_thumbnail('post-thumbnail', ['class' => 'img-responsive responsive--full', 'title' => 'Feature image']); ?>
-            <div style="background-image: url('<?php echo get_the_post_thumbnail_url(get_the_ID(),'full');?>?cacheBuster=1')" class="work-image">
+            <div style="background-image: url('<?php echo get_the_post_thumbnail_url(get_the_ID(),'full');?>?cacheBuster=1')" class="work-image hideme-half">
             </div>
             <div class="flex-cont">
                 <div class="work-text-left">
-                    <h2><a href="<?php the_permalink() ?>"><?php the_title();?></a></h2>
-                    <p class="post-tags"> <?php
+                    <h2 class="hideme"><a href="<?php the_permalink() ?>"><?php the_title();?></a></h2>
+                    <p class="post-tags hideme"> <?php
                         $post_tags = get_the_tags();
  
                         if ( $post_tags ) {
@@ -35,7 +35,7 @@ get_header();
                         ?>
                     </p>
                 </div>
-                <div class="work-text-right">
+                <div class="work-text-right hideme">
                     <a href="<?php the_permalink() ?>"><button>View Case</button></a>
                 </div>
             </div>
@@ -43,15 +43,8 @@ get_header();
         <?php
         endwhile;
     endif;
+
+    get_template_part( 'partials/collab', 'footer' );
     ?>
-
-<section class="collab">
-    <h1>Looking for a collaboration?</h1>
-    <p class="collab-mailto"><a href="mailto:hello@emilj.se">hello@emilj.se</a></p>
-    <p class="thirds"><a href="tel:004672 962 04 41">Phone</a></p>
-    <p class="thirds"><a href="https://github.com/karlperemil">Github</a></p>
-    <p class="thirds"><a href="https://www.linkedin.com/in/emil-j%C3%B6nsson-22292034/">LinkedIn</a></p>
-</section>
-
 
 </div>

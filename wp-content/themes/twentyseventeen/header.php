@@ -18,17 +18,12 @@
 <meta charset="<?php bloginfo( 'charset' ); ?>">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link href="https://fonts.googleapis.com/css?family=Roboto+Mono:100,100i,300,300i,400,400i,500,500i,700,700i" rel="stylesheet">
-
-<script type="text/javascript" src="https://rawgit.com/patriciogonzalezvivo/glslCanvas/master/dist/GlslCanvas.js"></script>
 <link rel="profile" href="http://gmpg.org/xfn/11">
 
 <?php wp_head(); ?>
 </head>
 
 <body <?php body_class(); ?>>
-<div class="content3d">
-<canvas id="canvas3d"></canvas>
-</div>
 <?php get_template_part( 'partials/menu' ); ?>
 
 <div id="page" class="site">
